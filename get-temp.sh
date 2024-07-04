@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script: get_temp.sh
+# Script: get-temp.sh
 # Purpose: Display the current temperature of Raspberry Pi CPU and GPU 
 # Author: Lawrence Dunbar
 # -------------------------------------------------------
