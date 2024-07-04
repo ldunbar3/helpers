@@ -21,18 +21,17 @@ CPU_TEMP=$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))
 GPU_TEMP=$(vcgencmd measure_temp | cut -d "=" -f 2 | cut -d "." -f1)
 
 # Temperature converted to Fahrenheit
-
 CPU_TEMP_F=$((CPU_TEMP * 9/5 +32))
 GPU_TEMP_F=$((GPU_TEMP * 9/5 +32))
 
 # CPU Temperature - Colorize output depending on temperature
 if [ $CPU_TEMP -ge 76 ]; then
 	echo -e "CPU Temp: ${BRED}$CPU_TEMP'C / $CPU_TEMP_F'F${NC}"
-elif [ $CPU_TEMP -ge 68 ]; then
+   elif [ $CPU_TEMP -ge 68 ]; then
 	echo -e "CPU Temp: ${LRED}$CPU_TEMP'C / $CPU_TEMP_F'F${NC}"
-elif [ $CPU_TEMP -ge 60 ]; then
+   elif [ $CPU_TEMP -ge 60 ]; then
 	echo -e "CPU Temp: ${YELLOW}$CPU_TEMP'C / $CPU_TEMP_F'F${NC}"
-else
+   else
 	echo -e "CPU Temp: ${CYAN}$CPU_TEMP'C / $CPU_TEMP_F'F${NC}"
 fi
 
@@ -40,10 +39,10 @@ fi
 
 if [ $GPU_TEMP -ge 76 ]; then
         echo -e "GPU Temp: ${BRED}$GPU_TEMP'C / $GPU_TEMP_F'F${NC}"
-elif [ $GPU_TEMP -ge 68 ]; then
+   elif [ $GPU_TEMP -ge 68 ]; then
         echo -e "GPU Temp: ${LRED}$GPU_TEMP'C / $GPU_TEMP_F'F${NC}"
-elif [ $GPU_TEMP -ge 60 ]; then
+   elif [ $GPU_TEMP -ge 60 ]; then
         echo -e "GPU Temp: ${YELLOW}$GPU_TEMP'C / $GPU_TEMP_F'F${NC}"
-else
+   else
         echo -e "GPU Temp: ${CYAN}$GPU_TEMP'C / $GPU_TEMP_F'F${NC}"
 fi
